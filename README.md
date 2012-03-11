@@ -1,6 +1,6 @@
 # Hirameki
 
-TODO: Write a gem description
+Hirameki is a one-time token generator backed by Redis.
 
 ## Installation
 
@@ -16,9 +16,28 @@ Or install it yourself as:
 
     $ gem install hirameki
 
+If you use Hirameki with Rails, put the following in `config/initializers/`.
+
+```ruby
+Hirameki.configure do |config|
+  config.redis = Redis.new(host: "localhost", port: 6379)
+  config.pepper = "put_a_long_pepper_in_here"
+  config.expiration_time = 10.minutes
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+it's super easy to use Hirameki. Give it a try on irb/pry!
+
+```
+ > token = Hirameki.generate!(10)
+=> "4dc6d4ca42e5204ab2d9cb5a0e0a8ec715c7d152"
+ > Hirameki.get(token)
+=> 10
+```
+
+Thas't it!
 
 ## Contributing
 
