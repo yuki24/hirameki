@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "hirameki"
   gem.require_paths = ["lib"]
   gem.version       = Hirameki::VERSION
+
+  gem.add_dependency 'redis', '~> 2.2.2'
+  gem.add_development_dependency 'rspec'
 end
