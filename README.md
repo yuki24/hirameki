@@ -1,4 +1,4 @@
-# Hirameki
+# Hirameki ![build status](https://secure.travis-ci.org/yuki24/hirameki.png)
 
 Hirameki is a one-time token generator backed by Redis.
 
